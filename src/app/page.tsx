@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <h1>Hello World</h1>
 
-      <Link href="/dashboard">Dashboard</Link>
+      <Link href="/app">Dashboard</Link>
     </div>
   )
 }
