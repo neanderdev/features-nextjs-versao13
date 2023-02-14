@@ -1,21 +1,14 @@
 import Link from 'next/link'
 
-// export const revalidate = 30
+import { User } from '@/components/User'
 
-export default async function Home() {
-  const response = await fetch('https://api.github.com/users/neanderdev', {
-    // next: {
-    //   revalidate: 30,
-    // },
-    cache: 'no-store',
-  })
-  const user = await response.json()
-
+export default function Home() {
   return (
     <div>
       <h1>Home</h1>
 
-      <pre>{JSON.stringify(user, null, 2)}</pre>
+      {/* @ts-expect-error Async Server Component */}
+      <User />
 
       <Link href="/app">Dashboard</Link>
     </div>
