@@ -14,16 +14,14 @@ export default async function Home() {
       <Suspense fallback={<p>Carregando repositórios...</p>}>
         {/* @ts-expect-error Async Server Component */}
         <Repo />
-
-        <Link href="/app">Dashboard</Link>
       </Suspense>
 
       <Suspense fallback={<p>Carregando usuário...</p>}>
         {/* @ts-expect-error Async Server Component */}
         <User />
-
-        <Link href="/app">Dashboard</Link>
       </Suspense>
+
+      <Link href="/app">Dashboard</Link>
     </div>
   )
 }
