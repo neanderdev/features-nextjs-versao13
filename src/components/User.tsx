@@ -1,10 +1,10 @@
 import { cookies, headers } from 'next/headers'
 
-import { Repo } from './Repo'
-
 // export const revalidate = 30
 
 export async function User() {
+  await new Promise((resolve) => setTimeout(resolve, 5000))
+
   const response = await fetch('https://api.github.com/users/neanderdev', {
     // next: {
     //   revalidate: 30,
@@ -26,9 +26,6 @@ export async function User() {
       <pre>{JSON.stringify(userHeaders.entries(), null, 2)}</pre>
 
       <pre>{JSON.stringify(user, null, 2)}</pre>
-
-      {/* @ts-expect-error Async Server Component */}
-      <Repo />
     </div>
   )
 }

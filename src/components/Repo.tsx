@@ -1,6 +1,8 @@
 // export const revalidate = 30
 
 export async function Repo() {
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
   const response = await fetch(
     'https://api.github.com/users/neanderdev/repos',
     {
