@@ -9,7 +9,11 @@ export default function Dashboard() {
 
       <Contador />
 
-      <Link href="/">Home</Link>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <Link href="/app/products/12">Produto 12</Link>
+
+        <Link href="/">Home</Link>
+      </div>
     </div>
   )
 }
